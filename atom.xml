@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-01-03T17:19:56.515Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my new note2</title>
+    <link href="http://example.com/2023/01/04/my-new-note2/"/>
+    <id>http://example.com/2023/01/04/my-new-note2/</id>
+    <published>2023-01-03T17:19:47.000Z</published>
+    <updated>2023-01-03T17:19:56.515Z</updated>
+    
+    <content type="html"><![CDATA[<p>lalla</p><p>1dawd1d</p><p>dwqcw</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;lalla&lt;/p&gt;
+&lt;p&gt;1dawd1d&lt;/p&gt;
+&lt;p&gt;dwqcw&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>my new note</title>
+    <link href="http://example.com/2023/01/04/my-new-note/"/>
+    <id>http://example.com/2023/01/04/my-new-note/</id>
+    <published>2023-01-03T17:04:47.000Z</published>
+    <updated>2023-01-03T17:05:33.120Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo简单介绍"><a href="#hexo简单介绍" class="headerlink" title="hexo简单介绍"></a>hexo简单介绍</h2><p>hexo是一种博客框架，可以通过markdown文件生成静态的网页<br>hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p><h2 id="hexo本地简单搭建与使用"><a href="#hexo本地简单搭建与使用" class="headerlink" title="hexo本地简单搭建与使用"></a>hexo本地简单搭建与使用</h2><p>参考资料：<br><a href="https://zhuanlan.zhihu.com/p/85037427">Hexo系列 | Hexo的基本使用 - 知乎 (zhihu.com)</a><br><a href="https://www.jianshu.com/p/84a8384be1ae">Hexo使用指南 - 简书 (jianshu.com)</a></p><p>首先，需要电脑安装Node.js和Git，后面文章会补充这两个软件的安装。</p><p>现在默认已经安装了这两个软件并且配置好了环境，同时通过node.js安装及配置好了npm（npm是node.js的包管理工具），<br>那么只需要三步即可搭建并运行一个基于hexo框架的个人网站。</p><p><strong>1. 安装hexo</strong><br>cmd调出命令提示符</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo cli</span><br></pre></td></tr></table></figure><p><strong>2. 创建hexo工程</strong><br>如果想在某个文件夹里存储hexo项目，就在该文件夹下输入以下命令，会自动在该文件夹下建立一个新文件夹并配置好hexo环境</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br></pre></td></tr></table></figure><p><strong>3. 新建一个文章</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ hexo new <span class="string">&quot;hello hexo!&quot;</span></span><br></pre></td></tr></table></figure><p><strong>4. 生成静态文件</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p><strong>5. 发布服务</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>上述两个也可以简写为<code>hexo g</code>, <code>hexo s</code></p><p>打开命令提示符给定的地址，一般是4000端口，网页就搭建好了。</p><h2 id="文件结构说明"><a href="#文件结构说明" class="headerlink" title="文件结构说明"></a>文件结构说明</h2><h2 id="hexo-github"><a href="#hexo-github" class="headerlink" title="hexo+github"></a>hexo+github</h2><p><a href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p><h2 id="hexo部署到服务器"><a href="#hexo部署到服务器" class="headerlink" title="hexo部署到服务器"></a>hexo部署到服务器</h2><p>最重要的资料</p><p><a href="https://blog.csdn.net/qq_26052777/article/details/114332517">(55条消息) hexo博客部署到宝塔面板_vela636的博客-CSDN博客_hexo部署到宝塔</a></p><p><a href="https://blog.csdn.net/qq_35561857/article/details/81590953">(54条消息) 带你跳过各种坑，一次性把 Hexo 博客部署到自己的服务器_lawler61的博客-CSDN博客_hexo 部署到服务器</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;hexo简单介绍&quot;&gt;&lt;a href=&quot;#hexo简单介绍&quot; class=&quot;headerlink&quot; title=&quot;hexo简单介绍&quot;&gt;&lt;/a&gt;hexo简单介绍&lt;/h2&gt;&lt;p&gt;hexo是一种博客框架，可以通过markdown文件生成静态的网页&lt;br&gt;hexo官方文档：</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2023/01/04/hello-world/"/>
+    <id>http://example.com/2023/01/04/hello-world/</id>
+    <published>2023-01-03T16:32:03.970Z</published>
+    <updated>2023-01-03T16:29:07.983Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
