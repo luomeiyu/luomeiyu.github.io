@@ -1,222 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends includes/layout.pug
 
-  
-  <title>my new note | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo简单介绍hexo是一种博客框架，可以通过markdown文件生成静态的网页hexo官方文档：文档 | Hexo hexo本地简单搭建与使用参考资料：Hexo系列 | Hexo的基本使用 - 知乎 (zhihu.com)Hexo使用指南 - 简书 (jianshu.com) 首先，需要电脑安装Node.js和Git，后面文章会补充这两个软件的安装。 现在默认已经安装了这两个软件并且配置好了环">
-<meta property="og:type" content="article">
-<meta property="og:title" content="my new note">
-<meta property="og:url" content="http://example.com/2023/01/04/my-new-note/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo简单介绍hexo是一种博客框架，可以通过markdown文件生成静态的网页hexo官方文档：文档 | Hexo hexo本地简单搭建与使用参考资料：Hexo系列 | Hexo的基本使用 - 知乎 (zhihu.com)Hexo使用指南 - 简书 (jianshu.com) 首先，需要电脑安装Node.js和Git，后面文章会补充这两个软件的安装。 现在默认已经安装了这两个软件并且配置好了环">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-01-03T17:04:47.000Z">
-<meta property="article:modified_time" content="2023-01-03T17:05:33.120Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
+
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-my-new-note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/04/my-new-note/" class="article-date">
-  <time datetime="2023-01-03T17:04:47.000Z" itemprop="datePublished">2023-01-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      my new note
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo简单介绍"><a href="#hexo简单介绍" class="headerlink" title="hexo简单介绍"></a>hexo简单介绍</h2><p>hexo是一种博客框架，可以通过markdown文件生成静态的网页<br>hexo官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p>
-<h2 id="hexo本地简单搭建与使用"><a href="#hexo本地简单搭建与使用" class="headerlink" title="hexo本地简单搭建与使用"></a>hexo本地简单搭建与使用</h2><p>参考资料：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85037427">Hexo系列 | Hexo的基本使用 - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/84a8384be1ae">Hexo使用指南 - 简书 (jianshu.com)</a></p>
-<p>首先，需要电脑安装Node.js和Git，后面文章会补充这两个软件的安装。</p>
-<p>现在默认已经安装了这两个软件并且配置好了环境，同时通过node.js安装及配置好了npm（npm是node.js的包管理工具），<br>那么只需要三步即可搭建并运行一个基于hexo框架的个人网站。</p>
-<p><strong>1. 安装hexo</strong><br>cmd调出命令提示符</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo cli</span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 创建hexo工程</strong><br>如果想在某个文件夹里存储hexo项目，就在该文件夹下输入以下命令，会自动在该文件夹下建立一个新文件夹并配置好hexo环境</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br></pre></td></tr></table></figure>
-
-<p><strong>3. 新建一个文章</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ hexo new <span class="string">&quot;hello hexo!&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>4. 生成静态文件</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p><strong>5. 发布服务</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>上述两个也可以简写为<code>hexo g</code>, <code>hexo s</code></p>
-<p>打开命令提示符给定的地址，一般是4000端口，网页就搭建好了。</p>
-<h2 id="文件结构说明"><a href="#文件结构说明" class="headerlink" title="文件结构说明"></a>文件结构说明</h2><h2 id="hexo-github"><a href="#hexo-github" class="headerlink" title="hexo+github"></a>hexo+github</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p>
-<h2 id="hexo部署到服务器"><a href="#hexo部署到服务器" class="headerlink" title="hexo部署到服务器"></a>hexo部署到服务器</h2><p>最重要的资料</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26052777/article/details/114332517">(55条消息) hexo博客部署到宝塔面板_vela636的博客-CSDN博客_hexo部署到宝塔</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35561857/article/details/81590953">(54条消息) 带你跳过各种坑，一次性把 Hexo 博客部署到自己的服务器_lawler61的博客-CSDN博客_hexo 部署到服务器</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/04/my-new-note/" data-id="clcghevoe0000607r4lzv6v99" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2023/01/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/01/04/my-new-note/">my new note</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/04/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
